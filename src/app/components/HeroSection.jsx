@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="w-full bg-blue-500">
+    <div className="w-full bg-[#2EA1DF]">
       <section className="max-w-[1440px] h-[531px] mx-auto px-[52px] items-center ">
         <div className="w-full flex justify-between items-center ">
           {/* Left Content */}
@@ -21,7 +21,7 @@ export default function Hero() {
               penyakit jantung hanya dari rumah
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/prediksi">
+              <Link href="/register">
                 <button className="bg-[#FFF155] text-black font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition">
                   Mulai Prediksi
                 </button>
