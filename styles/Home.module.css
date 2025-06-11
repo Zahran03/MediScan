@@ -1,0 +1,105 @@
+
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #AFBCC7;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menuItem {
+  font-size: 18px;
+  padding: 12px;
+  text-align: center;
+  background-color: #1E88E5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: #1669c7;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #13273C;
+  padding: 50px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.welcomeText {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.startButton {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.startButton:hover {
+  background-color: #0056b3;
+}
+
+.admin {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.adminLine {
+  position: absolute;
+  width: 79.6%;
+  height: 2px;
+  background-color: white;
+  top: 65px;
+  bottom: 30px;
+  opacity: 0.6;
+}
