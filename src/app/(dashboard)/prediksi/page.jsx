@@ -1,8 +1,10 @@
-import Link from "next/link";
 import React from "react";
-import Sidebar from "../components/Sidebar";
+import Button from "../components/Button.jsx";
+import Card from "../components/Card.jsx";
+import Link from "next/link.js";
+import Sidebar from "../components/Sidebar.jsx";
 
-export default function HomeDashboard() {
+export default function Home() {
   return (
     <div className="flex h-screen font-[Inter]">
       {/* Sidebar */}
@@ -26,32 +28,44 @@ export default function HomeDashboard() {
             // className="text-lg p-3 text-center bg-[#1E88E5] text-white rounded-lg cursor-pointer mb-2 font-bold hover:bg-[#1669c7]"
           >
             <li className="text-lg p-3 text-center bg-[#1E88E5] text-white rounded-lg cursor-pointer mb-2 font-bold hover:bg-[#1669c7]">
-              Prediksi
+              History Check Up
             </li>
           </Link>
           <li className="text-lg p-3 text-center bg-[#1E88E5] text-white rounded-lg cursor-pointer mb-2 font-bold hover:bg-[#1669c7]">
-            History Check Up
+            Check Up
           </li>
           <li className="text-lg p-3 text-center bg-[#1E88E5] text-white rounded-lg cursor-pointer mb-2 font-bold hover:bg-[#1669c7]">
             Profile
           </li>
         </ul>
       </div> */}
-
       <Sidebar />
 
-      {/* Konten utama: Selamat Datang */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center bg-[#13273C] p-[50px] box-border relative">
-        <div className="absolute top-[30px] right-[40px] text-lg font-bold text-white">
-          Admin
+      {/* Konten utama */}
+      <div className="flex-1 p-12 bg-[#13273c] text-white relative box-border">
+        <div className="absolute top-5 right-8 text-lg font-bold">Admin</div>
+        <div className="w-full h-[2px] bg-white opacity-60 my-4"></div>
+
+        <div className="grid grid-cols-3 gap-6 justify-center mt-16">
+          <Card
+            title="Prediksi Diabetes"
+            page="/prediksi/diabetes"
+            image="/DIABETES.png"
+            description="Prediksi diabetes menggunakan model AI"
+          />
+          <Card
+            title="Prediksi Hipertensi"
+            page="/prediksi/hipertensi"
+            image="/Hipertensi.png"
+            description="Analisis risiko hipertensi secara otomatis"
+          />
+          <Card
+            title="Prediksi Penyakit Jantung"
+            page="/prediksi/jantung"
+            image="/jantung.png"
+            description="Deteksi dini risiko penyakit jantung"
+          />
         </div>
-        <div className="absolute w-[79.6%] h-[2px] bg-white top-[65px] opacity-60"></div>
-        <h1 className="text-white text-2xl md:text-3xl font-bold mb-6">
-          Selamat Datang di Aplikasi Mediscan!
-        </h1>
-        <button className="bg-[#007BFF] text-white py-3 px-6 text-lg font-bold rounded-lg hover:bg-[#0056b3]">
-          Mulai Check Up
-        </button>
       </div>
     </div>
   );
