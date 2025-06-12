@@ -1,8 +1,33 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import Sidebar from "../components/Sidebar";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HomeDashboard() {
+  const router = useRouter();
+  const [isChecking, setIsChecking] = useState(true);
+
+  // useEffect(() => {
+  //   const checkAuth = async () => {
+  //     try {
+  //       const res = await fetch("/api/auth/me");
+
+  //       if (res.status !== 200) {
+  //         router.push("/login");
+  //       } else {
+  //         setIsChecking(false); // lanjut render dashboard
+  //       }
+  //     } catch (err) {
+  //       router.push("/login");
+  //     }
+  //   };
+
+  //   checkAuth();
+  // }, [router]);
+
   return (
     <div className="flex h-screen font-[Inter]">
       {/* Sidebar */}
@@ -40,18 +65,38 @@ export default function HomeDashboard() {
 
       <Sidebar />
 
-      {/* Konten utama: Selamat Datang */}
+      {/* Konten utama: Selamat Datang 
+      {isChecking ? (
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-lg text-gray-700">Memeriksa otentikasi...</p>
+        </div>
+      ) : null}
+      */}
+
+      {/* Konten Selamat Datang */}
       <div className="flex-1 flex flex-col items-center justify-center text-center bg-[#13273C] p-[50px] box-border relative">
         <div className="absolute top-[30px] right-[40px] text-lg font-bold text-white">
-          Admin
+          <p>Admin</p>
+          <button
+            onClick={async () => {
+              await fetch("/api/auth/logout", { method: "POST" });
+              window.location.href = "/login";
+            }}
+            className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+          >
+            Logout
+          </button>
         </div>
+
         <div className="absolute w-[79.6%] h-[2px] bg-white top-[65px] opacity-60"></div>
         <h1 className="text-white text-2xl md:text-3xl font-bold mb-6">
           Selamat Datang di Aplikasi Mediscan!
         </h1>
-        <button className="bg-[#007BFF] text-white py-3 px-6 text-lg font-bold rounded-lg hover:bg-[#0056b3]">
-          Mulai Check Up
-        </button>
+        <Link href={"/prediksi"}>
+          <button className="bg-[#007BFF] text-white py-3 px-6 text-lg font-bold rounded-lg hover:bg-[#0056b3]">
+            Mulai Check Up
+          </button>
+        </Link>
       </div>
     </div>
   );

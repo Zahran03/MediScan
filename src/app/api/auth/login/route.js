@@ -1,5 +1,6 @@
+// src/app/api/auth/login/route.js
 import { NextResponse } from "next/server";
-import { supabase } from "../../../../../lib/supabase";
+import { supabase } from "../../../../lib/supabase"; // pastikan path ini sesuai
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
@@ -34,7 +35,7 @@ export async function POST(req) {
   );
 
   const response = NextResponse.json({ message: "Login berhasil!" });
-  cookies().set("token", token, {
+  response.cookies.set("token", token, {
     httpOnly: true,
     path: "/",
     maxAge: 60 * 60 * 24, // 1 hari
