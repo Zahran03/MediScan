@@ -21,9 +21,5 @@ export const metadata = {
 };
 
 export default function DashboardLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={`${inter.variable}  antialiased`}>{children}</body>
-    </html>
-  );
+  return <div className={`${inter.variable}  antialiased`}>{children}</div>;
 }
